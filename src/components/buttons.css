@@ -1,0 +1,27 @@
+.button {
+    font-family: "Fira Code";
+    display: inline-block;
+    background-color: #6356E4;
+    border-radius: 0.5rem;
+    box-shadow: 0.3125rem 0.3125rem 0rem 0rem #000;
+    padding: 1.0625rem 3.125rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button.-form {
+    width: 100%;
+    font-size: 1.875rem;
+    font-weight: 300;
+    margin-top: 2.48rem;
+}
+
+.button:hover {
+    background-color: #766af1;
+}
+
+.button.-auth {
+    width: 100%;
+    box-shadow: 0.15rem 0.15rem 0rem 0rem black;
+}

@@ -1,0 +1,167 @@
+.header{
+    background-color: #6356E4;
+    border-bottom: 0.625rem solid black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.1875rem;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    max-width: 60px;
+    padding-left: 1.5rem;
+}
+
+.profile-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-icon button:hover {
+    background-color: #766af1;
+}
+
+.profile-icon-img {
+    width: 100%;
+    height: auto;
+}
+
+.login {
+    display: none;
+}
+
+.side-bar {
+    width: 250px;
+    height: 100px;
+    position: fixed;
+    align-content: center;
+    background-color: black;
+    top: 90px;
+    right: 1.3rem;
+    z-index: 100;
+}
+
+.action.-sidebar{
+    padding-left: 15px;
+    padding-bottom: 8px;
+}
+
+.open-login {
+    display: block;
+}
+
+.menu-icon {
+    display: none;
+    width: 100%;
+    max-width: 50px;
+}
+
+.menu-ico-imag {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.menu {
+    display: none;
+}
+
+.menu-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#logo{
+    box-shadow: -0.3125rem -0.125rem 0rem black;
+}
+
+.header .list-header{
+    display: inline;
+}
+
+.header .list-header:last-of-type .action{
+    margin-right: 0rem;
+}
+
+.action {
+    display: inline-flex;
+    align-items: center;
+    color: #FFF;
+    font-family: "Fira Code";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    margin-right: 3.9375rem;
+}
+
+.action::before {
+    content: "";
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    margin-right: 0.625rem;
+}
+
+.action.-second::before {
+    content: none;
+}
+
+.action.-second {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .header{
+        position: relative;
+    }
+    
+    .nav-list {
+        display: none;
+    }
+
+    .menu-ico-imag {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menu ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .open-menu {
+        display: block;
+    }
+}
+

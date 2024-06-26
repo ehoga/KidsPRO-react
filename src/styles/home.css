@@ -1,0 +1,317 @@
+/* css textos */
+
+.title{
+    color: #6356E4;
+    text-shadow: 0.25rem 0.25rem 0rem #000;
+
+    font-family: "Press Start 2P";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.title.-second{
+    color: white;
+    text-shadow: none;
+    text-align: center;
+}
+
+.subtitle{
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0.25rem 0.25rem 0rem #000;
+
+    font-family: "Press Start 2P";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* css banner */
+
+.banner {
+    background-image: url(../assets/img/wallpaperprinc.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 807px;
+    border-bottom: 0.625rem solid black;
+}
+
+.banner .wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 630px;
+    padding-left: 5.688rem;
+    padding-top: 7.25rem;
+}
+
+.banner .box {
+    margin-bottom: 2.375rem;
+}
+
+.box{
+    background: #3A4042;
+    width: 100%;
+    border-radius: 0.5rem;
+    padding-bottom: 1.1875rem;
+    box-shadow: 0.625rem 0.625rem 0rem black;
+    text-align: center;
+}
+
+.box .title {
+    margin-top: 2.625rem;
+    margin-bottom: 1.438rem;
+}
+
+.banner .navigation {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+    .banner .wrapper {
+        padding: 2rem;
+        margin: auto;
+    }
+}
+
+/* css sections */
+
+.section {
+    background-color: #283A76;
+    border-bottom: 0.625rem solid black;
+    padding-top: 3.125rem;
+    padding-bottom: 6.875rem;
+}
+
+.table-div {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 3.125rem;
+    color:#FFF;
+    font-family: "Fira Code";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 0.625rem;
+    text-align: center;
+    border: 0.125rem solid black;
+}
+
+.section td, th {
+    padding: 0.625rem;
+    text-align: center;
+    border: 0.125rem solid black;
+}
+
+.text{
+    color:#FFF;
+    font-family: "Fira Code";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 5rem;
+}
+
+#textformat {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.section.-games{
+    background: #98182B;
+    padding-top: 3.125rem;
+    border-bottom: 0.625rem solid #3A4042;
+}
+
+@media screen and (max-width: 768px) {
+    .section th, td {
+        font-size: 1rem;
+    }
+    .table-div {
+        padding: 0 2rem;
+    }
+    .text {
+        font-size: 1.7rem;
+    }
+    #textformat {
+        margin: 0 2.5rem;
+    }
+}
+
+/* css card */
+
+.card{
+    background-color: black;
+    border-bottom: 0.625rem solid #98182B;
+    text-align: center;
+    padding-top: 3.125rem;
+    padding-bottom: 4.375rem;
+}
+
+.card .card-fotos{
+    display: inline-block;
+    margin: 3.125rem 4.875rem 0rem;
+}
+
+.card img{
+    max-width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0.625rem 0.625rem 0rem white;
+}
+
+.legendas{
+    color: #FFF;
+
+    font-family: "Press Start 2P";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2.125rem;
+}
+
+@media screen and (max-width: 768px) {
+    .card .card-fotos {
+        align-items: center;
+        padding: 0;
+        margin: 3.125rem 0 0;
+    }
+
+    .card img {
+        max-width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    .legendas{
+        font-size: 2rem;
+    }
+}
+
+/* css jogos */
+
+.container-jogos {
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    padding: 6.5625rem 0;
+    grid-gap: 12rem 15vw;
+}
+
+.conjunto-jogo {
+    display: flex;
+}
+
+.conjunto-jogo img {
+    max-width: 100%;
+}
+
+.nome-jogo {
+    color: #FFF;
+
+    font-family: "Press Start 2P";
+    font-size: 1.5625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 0.3125rem;
+    margin-left: 1.6875rem;
+}
+
+#lol {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .container-jogos {
+        grid-template-columns: 1fr;
+        gap: 4rem 15vw;
+    }
+
+    .conjunto-jogo{
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+
+    .nome-jogo{
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* css form  */
+
+.form {
+    padding: 3.125rem 10rem;
+    background-color: #3A4042;
+}
+
+.form .title.-second{
+    margin-bottom: 3.125rem;
+}
+
+.form .barra-input {
+    margin-bottom: 1.25rem;
+}
+
+.form .barra-input.-textarea {
+    margin-bottom: 2.5rem;
+}
+
+.label-form {
+    color: #FFF;
+    font-family: "Fira Code";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 40px;
+}
+
+.barra-input {
+    box-sizing: border-box;
+    border: 5px solid #000;
+    width: 100%;
+    height: 50px;
+    font-size: 1.875rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+}
+
+.barra-input.-textarea {
+    height: 318.74px;
+}
+
+@media screen and (max-width: 768px) {
+    .form {
+        padding: 3.125rem 1.5rem;
+    }
+}
+
