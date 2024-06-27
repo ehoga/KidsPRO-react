@@ -1,0 +1,86 @@
+/* Estilos para a seção de informações do curso */
+
+.body-curso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #283A76;
+    height: 100vh;
+}
+
+.curso-info {
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    height: 55%;
+}
+
+.detalhes-curso {
+    max-width: 800px;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.banner-curso {
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.wrapper-curso {
+    display: flex;
+    
+}
+
+.banner-curso .box-curso {
+    margin-bottom: 2.375rem;
+}
+
+.box-curso {
+    background: #3A4042;
+    width: 100%;
+    padding-bottom: 1.1875rem;
+    text-align: center;
+}
+
+.box-curso .subtitle {
+    margin-top: 1.438rem;
+}
+
+.info-title {
+    font-size: 2.5rem;
+    font-family: "Press Start 2P";
+    margin-bottom: 2rem;
+}
+
+.info-description {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-compra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-preco {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 2rem;
+}
+
+.button-cart {
+    background-color: #6356E4;
+    color: #FFF;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.button-cart:hover {
+    background-color: #493BB7;
+}

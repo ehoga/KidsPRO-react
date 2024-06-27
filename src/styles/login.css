@@ -20,18 +20,24 @@
 .login-container h1 {
     margin-bottom: 20px;
     color: #FFF;
-    font-family: "Fira Code";
     font-size: 2rem;
     font-weight: 600;
 }
 
 .login-form {
-    position: relative;
     width: 450px;
     padding: 30px;
     background-color: #6356E4;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-error {
+    text-align: center;
+    color: rgb(199, 5, 5);
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .links {
@@ -43,7 +49,6 @@
 .auth, .voltar {
     text-decoration: none;
     color: #FFF;
-    font-family: "Fira Code";
     font-size: 1rem;
 }
 
@@ -53,7 +58,6 @@
 
 .form-control label {
     color: #FFF;
-    font-family: "Fira Code";
     font-size: 1.3rem;
     font-style: normal;
     font-weight: 300;

@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
+import Curso from './pages/Curso';
+import Carrinho from './pages/Carrinho';
+import { HeaderProvider } from './context/HeaderContext';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,14 @@ const router = createBrowserRouter([
         path: "cadastro",
         element: <Cadastro />,
       },
+      {
+        path: "curso",
+        element: <Curso />,
+      },
+      {
+        path: "carrinho",
+        element: <Carrinho />,
+      },
     ],
   },
 ]);
@@ -32,7 +43,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HeaderProvider>
+      <RouterProvider router={router} />
+    </HeaderProvider>
   </React.StrictMode>
 );
 

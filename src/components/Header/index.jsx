@@ -1,13 +1,32 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './styles.css';
 import logo from '../../assets/img/logo.png';
 import menuIcon from '../../assets/img/menu.svg';
 import menuClose from '../../assets/img/close.svg';
 import {ReactComponent as ProfileIcon} from '../../assets/img/profile-icon.svg';
+import {ReactComponent as CarrinhoCompras} from '../../assets/img/carrinhocompras.svg';
 import { Link } from 'react-router-dom';
+import { HeaderContext } from '../../context/HeaderContext';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const { isNavListVis, isCarrinhoComprasVis } = useContext(HeaderContext);
+
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    };
+
+    useEffect (() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const menuShow = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -20,21 +39,29 @@ function Header() {
     };
 
     return (
-        <header className="header-bar">
+        <header className={`header-bar ${isScrolled ? 'scrolled' : ''}`}>
             <div className='header'>
                 <nav className="nav-bar">
-                    <img id="logo" src={logo} alt='Logo' />
                     
+                    <Link to='/'><img id="logo" src={logo} alt='Logo' /></Link>
+                           
                     <div className='nav-icons'>
-                        <div className="nav-list">
-                            <ul>
-                                <li className="list-header"><a className="action" href="#sobre">Sobre</a></li>
-                                <li className="list-header"><a className="action" href="#treinadores">Treinadores</a></li>
-                                <li className="list-header"><a className="action" href="#jogos">Jogos</a></li>
-                                <li className="list-header"><a className="action" href="#contatos">Contatos</a></li>
-                            </ul>
-                        </div>
-
+                        {isNavListVis && (
+                            <div className="nav-list">
+                                <ul>
+                                    <li className="list-header"><a className="action" href="#sobre">Sobre</a></li>
+                                    <li className="list-header"><a className="action" href="#treinadores">Treinadores</a></li>
+                                    <li className="list-header"><a className="action" href="#jogos">Jogos</a></li>
+                                    <li className="list-header"><a className="action" href="#contatos">Contatos</a></li>
+                                </ul>
+                            </div>
+                        )}
+                    
+                        {isCarrinhoComprasVis && (
+                            <Link to='/carrinho' className='carrinho'><CarrinhoCompras className='carrinho-img' /></Link>
+                        )}
+                                  
+                        
                         <div className='profile-icon'>
                             <button onClick={loginShow}><ProfileIcon className='profile-icon-img' /></button>
                         </div>

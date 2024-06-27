@@ -1,35 +1,60 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import authData from '../auth.json'
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/login.css';
 import '../components/buttons.css'
-import { Link, useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loginError, setLoginError] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log('Username:', username);
-        console.log('Password:', password);
-        setUsername('');
-        setPassword('');
+        try {
+            const auth = authData.users.find(u => u.email === email && u.password === password);
+            console.log(auth);
+            if (auth) {
+                alert('Login realizado com sucesso!');
+                navigate("/");
+            } else {
+                setLoginError('Email ou senha estão invalidos');
+            }
+        } catch (error) {
+            console.error(error);
+            setLoginError('Erro ao realizar o login');
+        }
 
-        navigate("/");
     };
+
+    useEffect(() => {
+        if(loginError){
+            const timer = setTimeout(() => {
+                setLoginError('');
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+
+
+    }, [loginError]);
 
     return (
         <div className='login-page'>
+
+            <Header />
+            
             <div className="login-container">
             <h1>Login</h1>
             <form className="login-form" onSubmit={handleLogin}>
                 <div className="form-control">
-                    <label htmlFor="username">E-mail</label>
+                    <label htmlFor="email">E-mail</label>
                     <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
@@ -44,8 +69,10 @@ const Login = () => {
                     />
                 </div>
                 
+                {loginError && <p className='auth-error'>{loginError}</p>}
+
                 <button className="button -auth" type="submit">Login</button>
-            
+
             </form>
             
             </div>

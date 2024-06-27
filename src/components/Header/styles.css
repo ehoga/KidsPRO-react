@@ -1,11 +1,15 @@
-.header{
+.header-bar{
     background-color: #6356E4;
-    border-bottom: 0.625rem solid black;
+    border-bottom: 0.2rem solid black;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+.header-bar.scrolled {
+    border-bottom: 0;
 }
 
 .nav-bar {
@@ -34,11 +38,16 @@
     cursor: pointer;
 }
 
-.profile-icon button:hover {
-    background-color: #766af1;
+.profile-icon-img {
+    width: 100%;
+    height: auto;
 }
 
-.profile-icon-img {
+.carrinho {
+    max-width: 50px;
+}
+
+.carrinho-img {
     width: 100%;
     height: auto;
 }

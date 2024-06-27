@@ -1,29 +1,45 @@
 import React, { useState } from 'react';
-import '../styles/registro.css';
-import '../components/buttons.css'
+import { useEffect } from 'react';
+import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/cadastro.css';
+import '../components/buttons.css';
+import Header from '../components/Header';
 
 const Cadastro = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+    const [cadastroError, setCadastroError] = useState('');
     const navigate = useNavigate();
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-        console.log('Username:', username);
-        console.log('Password:', password);
-        console.log('Email:', email);
-        setUsername('');
-        setPassword('');
-        setEmail('');
-
-        navigate("/login");
+        
+        try {
+            await axios.post('http://localhost:5000/users', { username, email, password });
+            alert('Usuario cadastrado com sucesso!');
+            navigate("/login");
+        } catch (error) {
+            console.error(error);
+            setCadastroError('Erro ao cadastrar o usuario')
+        }
     };
 
+    useEffect(() => {
+        if(cadastroError){
+            const timer = setTimeout(() => {
+                setCadastroError('');
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [cadastroError]);
+
     return (
-        
         <div className='register-page'>
+            
+            <Header />
+        
             <div className="register-container">
                 <h1>Registrar-se</h1>
                 <form className="register-form" onSubmit={handleRegister}>
@@ -57,6 +73,9 @@ const Cadastro = () => {
                             required
                         />
                     </div>
+                    
+                    {cadastroError && <p className='auth-error'>{cadastroError}</p>}
+                    
                     <button className="button -auth" type="submit">Registrar-se</button>
                 </form>
             </div>
